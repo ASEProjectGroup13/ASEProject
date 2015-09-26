@@ -36,25 +36,20 @@ public class RegisterUser extends HttpServlet{
 		registerPoJO.setConfirmPassword(req.getParameter("confirmPassword"));
 		registerPoJO.setPhoneNumber(Long.parseLong(req.getParameter("phoneNumber")));
 		registerPoJO.setEmailID(req.getParameter("emailId"));
-		
-		String username = req.getParameter("username");
-		String firstname = req.getParameter("firstName");
-		String lastname = req.getParameter("lastName");
-		String password = req.getParameter("password");
-		String cnfpassword = req.getParameter("confirmPassword");
-		String phNumber = req.getParameter("phoneNumber");
-		String emailID = req.getParameter("emailId");
+		registerPoJO.setUserType(req.getParameter("userType"));
+
 		
 		//Creating the Basic DB object Mongo Labs
 		
 		BasicDBObject basicDBObject = new BasicDBObject();
 	
-			basicDBObject.put("username", username);
-			basicDBObject.put("First Name", firstname);
-			basicDBObject.put("Last Name", lastname);
-			basicDBObject.put("Password", password);
-			basicDBObject.put("Phone Number", phNumber);
-			basicDBObject.put("Email", emailID);
+			basicDBObject.put("username", registerPoJO.getUserName());
+			basicDBObject.put("First Name", registerPoJO.getFirstName());
+			basicDBObject.put("Last Name", registerPoJO.getLastName());
+			basicDBObject.put("Password", registerPoJO.getPassword());
+			basicDBObject.put("Phone Number", registerPoJO.getPhoneNumber());
+			basicDBObject.put("Email", registerPoJO.getEmailID());
+			basicDBObject.put("usertype", registerPoJO.getUserType());
 		
 		//Creating DAO Object to send and passsing JSON Object to Mongo Labs
 		RegisterDAO registerDAO = new RegisterDAO();

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -49,32 +49,52 @@
 </head>
 <body>
 
-<div id="header">
-		<h1>Student Recommendations</h1>
+	<div id="header">
+		<h1>Course Recommendations</h1>
 	</div>
 	<div id="section">
-
 		<h2>Login Page</h2>
 		<form action="LoginUser" method="get">
+
+			<!-- <select name="userType" size="3" >
+			<option>Student</option>
+			<option>Admin</option>
+			<option>Professor</option>
+			</select> -->
+
+			
 			<table align="center">
+			<tr>
+			<td><label>Choose:</label><td align="center">
+			<select name="userType">
+				<option value="student">Student</option>
+				<option value="admin">Admin</option>
+				<option value="professor">Professor</option>
+			</select>
+			</td>
+			</tr>
 				<tr>
 					<td align="center"><label>User Name:</label></td>
 					<td align="center"><input name="userName" type="text"></td>
 				</tr>
 				<tr>
 					<td align="center"><label>Password:</label></td>
-					<td align="center"><input name="password" type="text"></td>
+					<td align="center"><input name="password" type="password"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Login"></td>
+					<td><input type="submit" value="Admin"></td>
 				</tr>
 			</table>
-			<input type="submit" name = "login" value="Login" >
-
-	</form>
-
+		</form>
+		<center>
+			<font color="red">${message}</font>
+		</center>
 	</div>
 	<div id="notifications">
 		<h1>Notifications</h1>
 	</div>
 	<div id="footer">Copyrights @ASE Group13</div>
-<h1>Hello</h1>
+	<h1>Hello</h1>
 </body>
 </html>

@@ -1,17 +1,8 @@
 package com.umkc.dao;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 
-import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
 
 import com.mongodb.BasicDBObject;
@@ -21,9 +12,8 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
-public class RegisterDAO {
-	
-	MongoClient mongoClient;
+public class CourseDAO {
+MongoClient mongoClient;
 	
 	
 	
@@ -43,7 +33,7 @@ public class RegisterDAO {
 		DB db =  mongoClient.getDB("group13");
 		
 		//Getting the object for collection "asegroup" created in database
-		DBCollection dbcollection = db.getCollection("ase");
+		DBCollection dbcollection = db.getCollection("courses");
 		
 		return dbcollection;
 	}
@@ -58,9 +48,8 @@ public class RegisterDAO {
 		boolean status;
 		
 		
-		BasicDBObject basicDBObject = new BasicDBObject("username", basicObject.get("username"));
 		//Calling the doesContains method to check whether any records exists in database or not with that ID
-		if(doesContains(basicDBObject)){
+		if(doesContains(basicObject)){
 			status= false;
 			
 		}
@@ -81,11 +70,20 @@ public class RegisterDAO {
 		return status;
 	}
 	
+	//method to delete document
+	public void deleteDocFromMongoDB(BasicDBObject basicObject)
+	{
+	DBCollection dbcollection= getDBCollection();
+	dbcollection.remove(basicObject);
+		
+		
+	}
+	
 	
 	/**
 	 * Method to close mongoClient created above.
 	 */
-	private void closeClient() {
+	public void closeClient() {
 		//Calling predefined api to close the connection.
 		mongoClient.close();
 	}
@@ -130,4 +128,11 @@ public class RegisterDAO {
 		
 		return false;
 	}
+	
+	public static void main(String[] args) {
+		
+		
+		
+	}
 }
+

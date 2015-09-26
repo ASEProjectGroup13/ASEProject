@@ -32,5 +32,44 @@
         <servlet-name>LoginUser</servlet-name>
         <url-pattern>/LoginUser</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AddCourse</servlet-name>
+        <servlet-class>com.umkc.users.AddCourse</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>AddCourse</servlet-name>
+        <url-pattern>/AddCourse</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CoursesInfo</servlet-name>
+        <servlet-class>com.umkc.users.CoursesInfo</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CoursesInfo</servlet-name>
+        <url-pattern>/CoursesInfo</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ListCourses</servlet-name>
+        <servlet-class>com.umkc.users.ListCourses</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ListCourses</servlet-name>
+        <url-pattern>/ListCourses</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>DeleteCourse</servlet-name>
+        <servlet-class>com.umkc.users.DeleteCourse</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteCourse</servlet-name>
+        <url-pattern>/DeleteCourse</url-pattern>
+    </servlet-mapping>
+    
 </web-app>  

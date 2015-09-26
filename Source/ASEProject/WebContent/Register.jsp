@@ -48,14 +48,25 @@
 </head>
 <body>
 	<div id="header">
-		<h1>Student Recommendations</h1>
+		<h1>Course Recommendations</h1>
 	</div>
 
 	<div id="section">
+	<center><font color="red">${status};</font></center>
 
 		<h2>Register Page</h2>
 		<form action="RegisterUser" method="get">
 			<table align="center">
+			
+			<tr>
+			<td><label>Choose:</label><td align="center">
+			<select name="userType">
+				<option value="student">Student</option>
+				<option value="admin">Admin</option>
+				<option value="professor">Professor</option>
+			</select>
+			</td>
+			</tr>
 				<tr>
 					<td align="center"><label>User Name</label></td>
 					<td align="center"><input name="username" type="text"></td>
