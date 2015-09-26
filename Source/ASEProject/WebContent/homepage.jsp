@@ -43,8 +43,9 @@ padding: 5px;
 
 </style>
 </head>
-<body>
-<div id = "header"><h1>Course Main Page</h1></div>
+<body background="images/umkc.jpg">
+<div id = "header"><h1>Course Recommendations</h1></div>
+<h2 align="right"><label>welcome Venu Babu Kolla</label></right></h2>
 <div id = "nav">
 <a href = "courses.jsp">Courses</a><br>
 <a href = "professors.jsp">Professors</a><br>

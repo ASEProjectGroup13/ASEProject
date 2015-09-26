@@ -46,7 +46,7 @@
 }
 </style>
 </head>
-<body>
+<body background="images/admin.jpeg">
 <div id = "header"><h1>Course Recommendation</h1></div>
 <div id = "nav">
 <a href = "courses.jsp">Courses</a><br>

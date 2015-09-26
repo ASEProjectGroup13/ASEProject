@@ -46,7 +46,7 @@
 }
 </style>
 </head>
-<body>
+<body background="images/umkc.jpg">
 
 <div id="header">
 		<h1>modifyCourse</h1>

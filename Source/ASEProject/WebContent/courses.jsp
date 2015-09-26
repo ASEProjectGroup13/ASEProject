@@ -44,7 +44,7 @@
 }
 </style>
 </head>
-<body>
+<body background="images/admin.jpeg">
 	<div id="header">
 		<h1>Course Recommendation</h1>
 		<h2 align="right"><label>welcome Admin</label></right></h2>

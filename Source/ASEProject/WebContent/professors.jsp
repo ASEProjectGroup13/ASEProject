@@ -44,10 +44,10 @@
 }
 </style>
 </head>
-<body>
+<body background="images/professor.jpg">
 	<div id="header">
 		<h1>Course Recommendations</h1>
-		<h2 align="right"><label>welcome Venu Babu Kolla</label></right></h2>
+		<h2 align="right"><label>welcome Admin</label></right></h2>
 	</div>
 	<div id="nav">
 		<a href="courses.jsp">Courses</a><br> <a href="professors.jsp">Professors</a><br>

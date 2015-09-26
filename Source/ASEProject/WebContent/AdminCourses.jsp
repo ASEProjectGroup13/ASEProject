@@ -44,7 +44,7 @@
 }
 </style>
 </head>
-<body>
+<body background="images/umkc.jpg">
 	<div id="header">
 		<h1>Course Recommendation</h1>
 	</div>
