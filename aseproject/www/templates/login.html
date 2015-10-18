@@ -1,0 +1,31 @@
+<ion-view title="Login" class="loginpanel">
+  <ion-content padding="true" scroll="false" class="has-header has-footer" ng-controller="LoginCtrl">
+    <form>
+      <ion-list>
+        <label class="item item-select" name="usertype">
+          <span class="input-label">User Type</span>
+          <select name = "usertype" ng-model = "users.usertype">
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+            <option value="prof">Professor</option>
+
+          </select>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" placeholder="Enter username" ng-model="users.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="Enter Password" ng-model="users.password">
+        </label>
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <button class="button button-stable button-block  button-full" ng-click="login(users)">Log in
+      </button>
+      <!--<button class="button button-stable button-block  button-full" ng-click="register(usertype,name,username, password, email,phonenumber)">Create an account-->
+      <!--</button>-->
+      <a href="#/signup" class="button button-positive button-clear button-block ">Or create an account</a>
+    </form>
+  </ion-content>
+</ion-view>
