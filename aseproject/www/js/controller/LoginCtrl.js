@@ -2,7 +2,7 @@
  * Created by Venu on 10/11/15.
  */
 
-myapp.controller('LoginCtrl', function($scope ,$http, $state){
+myapp.controller('LoginCtrl',function($scope ,$http, $state){
 
   $scope.login = function(data){
 
@@ -21,7 +21,14 @@ myapp.controller('LoginCtrl', function($scope ,$http, $state){
 
       if(status == 'success'){
         console.log("in success state")
-        $state.go('home')
+
+        if(data.usertype =='admin'){
+          $state.go('adminhome');
+        }else{
+          $state.go('homepage.coursespage')
+        }
+
+
       }else{
         console.log("in failure state")
         $state.go('login')

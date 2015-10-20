@@ -36,11 +36,11 @@ var myapp = angular.module('aseproject', ['ionic'])
 
       })
 
-      .state('home', {
-        url: '/home',
-        templateUrl: 'templates/home.html',
-        controller: 'homectrl'
-      })
+      //.state('home', {
+      //  url: '/home',
+      //  templateUrl: 'templates/home.html',
+      //  controller: 'homectrl'
+      //})
 
       .state('signup', {
         url: '/signup',
@@ -49,11 +49,135 @@ var myapp = angular.module('aseproject', ['ionic'])
 
       })
 
-      .state('courses', {
-        url: '/courses',
-        templateUrl: 'templates/courses.html',
-        controller: "coursesctrl"
+      .state('adminhome', {
+        url: '/adminhome',
+        templateUrl: 'templates/AdminHome.html',
+        controller: "AdminHomeCtrl"
+
       })
+
+      .state('admincreate', {
+        url: '/admincreate',
+        templateUrl: 'templates/AdminCreateHtml.html',
+        controller: "AdminCreateCtrl"
+
+      })
+
+
+      .state('homepage.professors', {
+        url: '/professor',
+        views: {
+          'professor': {
+            templateUrl: 'templates/professors.html',
+            controller: 'ProfessorsCtrl'
+          }
+        }
+      })
+
+
+
+
+
+      .state('homepage.coursespage', {
+        url: '/coursespage',
+        views: {
+          'courses': {
+            templateUrl: 'templates/coursesPage.html',
+            controller: 'coursespagectrl'
+
+          }
+        }
+      })
+
+      .state('homepage.profilePage', {
+        url: '/profile',
+        views: {
+          'profile': {
+            templateUrl: 'templates/profilePage.html',
+            controller: 'ProfilePageCtrl'
+
+          }
+        }
+      })
+
+
+
+      //.state('homepage.profilePage', {
+      //  url: '/profile',
+      //  templateUrl: 'templates/profilePage.html',
+      //  controller: 'profilePageCtrl'
+      //})
+
+
+
+
+      .state('homepage', {
+        url: '/home',
+        abstract:true,
+        templateUrl: 'templates/homepage.html',
+        controller: 'homectrl'
+      })
+
+
+
+
+      .state('professorRatings', {
+        url: '/profileratings',
+        templateUrl: 'templates/professorRatings.html',
+        controller: 'professorRatingsCtrl'
+      })
+
+
+
+
+
+      .state('homepage.professorHome.ratings', {
+        url: '/ratings',
+        views: {
+          'ratings': {
+            templateUrl: 'templates/ratings.html',
+            controller: 'ratingsCtrl'
+          }
+        }
+      })
+
+
+
+
+
+      .state('homepage.professorHome.feedback', {
+        url: '/feedback',
+        views: {
+          'feedback': {
+            templateUrl: 'templates/feedback.html',
+            controller: 'feedbackCtrl'
+          }
+        }
+      })
+
+
+
+
+
+      //.state('homepage.professorHome.homePage2', {
+      //  url: '/home',
+      //  views: {
+      //    'tab9': {
+      //      templateUrl: 'templates/homePage2.html',
+      //      controller: 'homePage2Ctrl'
+      //    }
+      //  }
+      //})
+
+
+
+
+      .state('homepage.professorHome', {
+        url: '/professortab',
+        //abstract:true,
+        templateUrl: 'templates/professorHome.html'
+      })
+
     ;
 
     // if none of the above states are matched, use this as the fallback

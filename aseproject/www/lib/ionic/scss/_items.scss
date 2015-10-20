@@ -659,7 +659,7 @@ button.item.item-button-right {
 
   &.ng-leave.ng-leave-active ~ ion-item:not(.ng-leave) {
     -webkit-transform: translate3d(0, unquote('-webkit-calc(-100% + 1px)'), 0);
-    transform: translate3d(0, calc(-100% + 1px), 0);
+    transform: translate3d(0,calc(-100% + 1px), 0);
     @include transition-duration( $item-remove-transition-duration );
     @include transition-timing-function( $item-remove-descendents-transition-function );
     @include transition-property( all );
