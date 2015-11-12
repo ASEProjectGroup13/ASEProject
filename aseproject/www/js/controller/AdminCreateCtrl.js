@@ -14,7 +14,7 @@ myapp.controller('AdminCreateCtrl', function($scope,$http,$state) {
       var request = {
 
         method: 'GET',
-        url: 'http://localhost:8080/com.umkc.rest/api/professors/retrieve'
+        url: 'http://mongorestserviceapi.mybluemix.net/api/professors/retrieve'
       }
 
 
@@ -35,7 +35,7 @@ myapp.controller('AdminCreateCtrl', function($scope,$http,$state) {
   $scope.createCourse = function(data) {
     var req = {
       method: 'POST',
-      url: 'http://localhost:8080/com.umkc.rest/api/courseinfo/insertcourse',
+      url: 'http://mongorestserviceapi.mybluemix.net/api/courseinfo/insertcourse',
       data: data
     };
 

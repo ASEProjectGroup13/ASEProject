@@ -14,8 +14,7 @@
     </style>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionico
-    ns.min.css" rel="stylesheet">
+    <!--<link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">-->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controller/LoginCtrl.js"></script>
@@ -28,9 +27,20 @@
     <script src="js/services/CourseData.js"></script>
     <script src="js/controller/AdminHomeCtrl.js"></script>
     <script src="js/controller/AdminCreateCtrl.js"></script>
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+    <script src="js/controller/AdminEditCtrl.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="js/pattern/Singleton.js"></script>
+    <script src="js/pattern/mixin.js"></script>
+    <script src="js/pattern/factory.js"></script>
+    <script src="js/controller/CartController.js"></script>
+    <script src="js/controller/ProfileController.js"></script>
+    <script src="js/controller/ProfileHomeController.js"></script>
+    <script src="js/controller/ProfilePageCtrl.js"></script>
+    <!--Scripts for profile items-->
+    <script src="js/controller/ProfileItemsCtrl.js"></script>
+    <script src="js/controller/BasicProfileCtrl.js"></script>
+    <script src="js/controller/CoursesCompletedCtrl.js"></script>
+    <script src="js/controller/CoursesEnrolledCtrl.js"></script>
 
 
 
@@ -47,7 +57,6 @@
   <script src="templates/login.html" type="text/ng-template"/>
   <script src="templates/signup.html" type="text/ng-template"/>
   <script src="templates/home.html" type="text/ng-template"/>
-  <!--<script src="templates/courses.html" type="text/ng-template"/>-->
   <script src="templates/homepage.html" type="text/ng-template"/>
   <script src="templates/professors.html" type="text/ng-template"/>
   <script src="templates/professorRatings.html" type="text/ng-template"/>
@@ -55,7 +64,17 @@
   <script src="templates/coursesPage.html" type="text/ng-template"/>
   <script src="templates/AdminHome.html" type="text/ng-template"/>
   <script src="templates/AdminCreateHtml.html" type="text/ng-template"/>
-  <!--<script src="templates/homePage2.html" type="text/ng-template"/>-->
+  <script src="templates/AdminEditCourse.html" type="text/ng-template"/>
+  <script src="templates/profileHome.html" type="text/ng-template"/>
+  <script src="templates/profilePage.html" type="text/ng-template"/>
+  <script src="templates/profileSideMenu.html" type="text/ng-template"/>
+  <script src="templates/profileItems.html" type="text/ng-template"/>
+
+  <!--templates for profile  items-->
+  <script src="templates/PreviousAcademicDetailsPage.html" type="text/ng-template"/>
+  <script src="templates/basicProfilePage.html" type="text/ng-template"/>
+  <script src="templates/coursesCompletedPage.html" type="text/ng-template"/>
+  <script src="templates/coursesEnrolledPage.html" type="text/ng-template"/>
 
   </body>
 </html>

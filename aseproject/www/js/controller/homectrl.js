@@ -11,7 +11,7 @@ myapp.controller('homectrl', function ($scope, $http, $state ) {
     var req = {
 
       method: 'GET',
-      url: 'http://localhost:8080/com.umkc.rest/api/professors/retrieve'
+      url: 'http://mongorestserviceapi.mybluemix.net/api/professors/retrieve'
     };
 
     $scope.professorsResponseData = [];
@@ -25,6 +25,12 @@ myapp.controller('homectrl', function ($scope, $http, $state ) {
 
       $state.go('homepage.professorHome');
     });
+  }
+
+  $scope.navigatePage = function(){
+
+    console.log('trying to naviage to another page of profile')
+    $state.go('profile.home')
   }
 })
 

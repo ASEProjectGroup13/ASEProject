@@ -4,9 +4,6 @@
 
 myapp.controller('coursespagectrl', function($scope, $http, $state){
 
-
- //$scope.receivedData = CourseData.get();
-
   console.log("inside coursedatactrl")
  // console.log($scope.receivedData)
 
@@ -15,11 +12,9 @@ myapp.controller('coursespagectrl', function($scope, $http, $state){
 
     var req = {
       method: 'GET',
-      url: 'http://localhost:8080/com.umkc.rest/api/mongo/courses'
+      url: 'http://mongorestserviceapi.mybluemix.net/api/courseinfo/courses'
 
     };
-
-    //$scope.courses = "";
 
     $scope.courses = [];
     var resData = '';

@@ -17,7 +17,7 @@ myapp.controller('AdminHomeCtrl', function($scope, $http, $state, $rootScope){
 
     var req = {
       method: 'GET',
-      url: 'http://localhost:8080/com.umkc.rest/api/mongo/courses'
+      url: 'http://mongorestserviceapi.mybluemix.net/api/courseinfo/courses'
 
     };
 
@@ -49,7 +49,7 @@ myapp.controller('AdminHomeCtrl', function($scope, $http, $state, $rootScope){
 
     var req = {
       method:'POST',
-      url:'http://localhost:8080/com.umkc.rest/api/courseinfo/deletecourse',
+      url:'http://mongorestserviceapitest.mybluemix.net/api/courseinfo/deletecourse',
       data:item
     }
 
@@ -75,7 +75,10 @@ myapp.controller('AdminHomeCtrl', function($scope, $http, $state, $rootScope){
   }
   $scope.viewDetails = function(data) {
     console.log("inside creation of course")
-    $state.go('admincreate');
+    $rootScope.items = data;
+    console.log("inside view details")
+    console.log($rootScope.items)
+    $state.go('adminedit');
 
   }
 })

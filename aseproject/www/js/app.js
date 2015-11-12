@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var myapp = angular.module('aseproject', ['ionic'])
+var myapp = angular.module('aseproject', ['ionic','ngCordova'])
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -35,35 +35,27 @@ var myapp = angular.module('aseproject', ['ionic'])
         controller: "LoginCtrl"
 
       })
-
-      //.state('home', {
-      //  url: '/home',
-      //  templateUrl: 'templates/home.html',
-      //  controller: 'homectrl'
-      //})
-
       .state('signup', {
         url: '/signup',
         templateUrl: 'templates/signup.html',
         controller: "SignupCtrl"
 
       })
-
       .state('adminhome', {
         url: '/adminhome',
         templateUrl: 'templates/AdminHome.html',
         controller: "AdminHomeCtrl"
-
       })
-
+      .state('adminedit', {
+        url: '/adminedit',
+        templateUrl: 'templates/AdminEditCourse.html',
+        controller: "AdminEditCtrl"
+      })
       .state('admincreate', {
         url: '/admincreate',
         templateUrl: 'templates/AdminCreateHtml.html',
         controller: "AdminCreateCtrl"
-
       })
-
-
       .state('homepage.professors', {
         url: '/professor',
         views: {
@@ -73,103 +65,35 @@ var myapp = angular.module('aseproject', ['ionic'])
           }
         }
       })
-
-
-
-
-
       .state('homepage.coursespage', {
         url: '/coursespage',
         views: {
           'courses': {
             templateUrl: 'templates/coursesPage.html',
             controller: 'coursespagectrl'
-
           }
         }
       })
-
       .state('homepage.profilePage', {
-        url: '/profile',
+        url: '/profilePage',
         views: {
           'profile': {
             templateUrl: 'templates/profilePage.html',
             controller: 'ProfilePageCtrl'
-
           }
         }
       })
-
-
-
-      //.state('homepage.profilePage', {
-      //  url: '/profile',
-      //  templateUrl: 'templates/profilePage.html',
-      //  controller: 'profilePageCtrl'
-      //})
-
-
-
-
       .state('homepage', {
         url: '/home',
         abstract:true,
         templateUrl: 'templates/homepage.html',
         controller: 'homectrl'
       })
-
-
-
-
       .state('professorRatings', {
         url: '/profileratings',
         templateUrl: 'templates/professorRatings.html',
         controller: 'professorRatingsCtrl'
       })
-
-
-
-
-
-      .state('homepage.professorHome.ratings', {
-        url: '/ratings',
-        views: {
-          'ratings': {
-            templateUrl: 'templates/ratings.html',
-            controller: 'ratingsCtrl'
-          }
-        }
-      })
-
-
-
-
-
-      .state('homepage.professorHome.feedback', {
-        url: '/feedback',
-        views: {
-          'feedback': {
-            templateUrl: 'templates/feedback.html',
-            controller: 'feedbackCtrl'
-          }
-        }
-      })
-
-
-
-
-
-      //.state('homepage.professorHome.homePage2', {
-      //  url: '/home',
-      //  views: {
-      //    'tab9': {
-      //      templateUrl: 'templates/homePage2.html',
-      //      controller: 'homePage2Ctrl'
-      //    }
-      //  }
-      //})
-
-
 
 
       .state('homepage.professorHome', {
@@ -178,7 +102,59 @@ var myapp = angular.module('aseproject', ['ionic'])
         templateUrl: 'templates/professorHome.html'
       })
 
-    ;
+      .state('profile', {
+        url: "/profile",
+        abstract: true,
+        templateUrl: "templates/profileSideMenu.html"
+      })
+      .state('profile.home', {
+        url: "/profilehome",
+        views: {
+          'appContent' :{
+            templateUrl: "templates/profileHome.html",
+            controller : "ProfileHomeController"
+          }
+        }
+      })
+
+      //States for profile information navigations
+      .state('profile.basic', {
+        url: "/profilebasic",
+        views: {
+          'appContent' :{
+            templateUrl: "templates/basicProfilePage.html",
+            controller : "ProfileHomeController"
+          }
+        }
+      })
+      .state('profile.courseCompleted', {
+        url: "/profileCourseCompleted",
+        views: {
+          'appContent' :{
+            templateUrl: "templates/coursesCompletedPage.html",
+            controller : "CoursesCompletedController"
+          }
+        }
+      })
+      .state('profile.coursesEnrolled', {
+        url: "/profileCoursesEnrolled",
+        views: {
+          'appContent' :{
+            templateUrl: "templates/coursesEnrolledPage.html",
+            controller : "CoursesEnrolledCtrl"
+          }
+        }
+      })
+      .state('profile.academicDetails', {
+        url: "/profileAcademicDetails",
+        views: {
+          'appContent' :{
+            templateUrl: "templates/PreviousAcademicDetailsPage.html",
+            controller : "ProfileHomeController"
+          }
+        }
+      })
+
 
     // if none of the above states are matched, use this as the fallback
 
@@ -213,4 +189,39 @@ var myapp = angular.module('aseproject', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-});
+})
+
+.directive("ionCart", function() {
+  return {
+    restrict : "E",
+    templateUrl : "templates/profileItems.html",
+    controller: 'ProfileItemsCtrl'
+  }
+})
+
+  .directive("ionPurchase", function() {
+    return {
+      restrict : "E",
+      template : "<h2>This is Ion Purchase</h2>"
+    }
+  });
+
+//var allowCrossDomain = function(req, res, next) {
+//  // Website you wish to allow to connect
+//  res.setHeader('Access-Control-Allow-Origin', 'http://localhost');
+//
+//  // Request methods you wish to allow
+//  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//
+//  // Request headers you wish to allow
+//  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+//
+//  // Set to true if you need the website to include cookies in the requests sent
+//  // to the API (e.g. in case you use sessions)
+//  res.setHeader('Access-Control-Allow-Credentials', true);
+//
+//  // Pass to next layer of middleware
+//  next();
+//}
+//
+//.use(allowCrossDomain);

@@ -1,0 +1,30 @@
+<ion-view style="" title="Courses Enrolled">
+  <ion-content class="has-header" padding="true">
+    <form>
+      <ion-list>
+
+        <label class="item item-input">
+          <span class="input-label">User Name</span>
+          <input type="text" placeholder="Enter username" ng-model="completedcourses.username" ng-readonly="true">
+        </label>
+        <label class="item item-select" name="courseCompleted">
+          <span class="input-label">Courses</span>
+          <select name = "professor" id="selectoptions" ng-model = "completedcourses.tttt" ng-change="updateList(completedcourses.tttt)" ng-options="temp as temp.coursename for temp in coursesForUpdation track by temp.courseid">
+
+            <option value="">- Select -</option>
+          </select>
+        </label>
+
+        <h1>Course Enrolled List:</h1>
+        <ion-list id="compltedID">
+          <ion-item ng-repeat="lll in coursesCompltedList" >
+            {{lll}}
+          </ion-item>
+        </ion-list>
+        <button class="button button-stable button-block  button-full" ng-click="updateSettings()" id="updateButton">Update
+        </button>
+        <button class="button button-stable button-block  button-full" ng-click="saveSettings(completedcourses)" id="saveButton">Save
+        </button>
+    </form>
+  </ion-content>
+</ion-view>

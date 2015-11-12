@@ -11,7 +11,10 @@ myapp.controller('SignupCtrl', function ($scope, $http, $state) {
 
     var req = {
       method: 'POST',
-      url: 'http://localhost:8080/com.umkc.rest/api/insert/create',
+      url: 'http://mongorestserviceapi.mybluemix.net/api/mongo/create',
+      headers: {
+        'Access-Control-Allow-Headers':'*'
+      },
       data: data
     };
 

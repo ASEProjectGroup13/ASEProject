@@ -11,7 +11,7 @@ myapp.controller('ProfessorsCtrl', function($scope,$http,$state){
     var request = {
 
       method:'GET',
-      url: 'http://localhost:8080/com.umkc.rest/api/professors/retrieve'
+      url: 'http://mongorestserviceapi.mybluemix.net/api/professors/retrieve'
     }
 
     $scope.professors = [];
