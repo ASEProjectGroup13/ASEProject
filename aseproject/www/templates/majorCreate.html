@@ -11,8 +11,72 @@
         <input type="text" placeholder="Enter Major Name" ng-model="majors.majorname">
       </label>
 
+<<<<<<< HEAD
       <div class="spacer" style="height: 40px;"></div>
       <button class="button button-stable button-block  button-full" ng-click="creatingMajor(majors)">Create Major
+=======
+      <ion-list>
+
+
+        <label class="item item-select" name="department">
+          <span class="input-label">Department</span>
+          <select name = "department" ng-model = "majors.department">
+            <option value="">- Select -</option>
+            <option value="CS">Computer Science</option>
+            <option value="EE">Electrical Engineering</option>
+            <option value="MEC">Mechanical Engineering</option>
+            <option value="CIV">Civil Engineering</option>
+
+          </select>
+        </label>
+
+        <label class="item item-select" name="courses">
+        <span class="input-label">select courses</span>
+        <select name = "courses" ng-model = "majors.listofcourses" ng-change="updateSettings(majors.listofcourses)">
+          <option value="">- Select -</option>
+          <option value="Advanced Software Engineering">Advanced Software Engineering</option>
+          <option value="Real Time BigData">Real Time BigData</option>
+          <option value="Architecture of dataBase Management Systems">Architecture of dataBase Management Systems</option>
+          <option value="Principles og BigData">Principles og BigData</option>
+          <option value="Introduction to Statistical Learning">Introduction to Statistical Learning</option>
+          <option value="BigData Analytics and Apps">BigData Analytics and Apps</option>
+          <option value="Large Scale Semistructured Data Management">Large Scale Semistructured Data Management</option>
+          <option value="Probabilistic Graphical Models">Probabilistic Graphical Models</option>
+          <option value="Cloud Computing">Cloud Computing</option>
+          <option value="Information Security and Assurance">Information Security and Assurance	</option>
+          <option value="Distributed Database Management Systems">Distributed Database Management Systems</option>
+          <option value="Mobile computing">Mobile Computing</option>
+          <option value="Intro to Bioinformatics">Intro to Bioinformatics</option>
+          <option value="Network Architecture I">Network Architecture I</option>
+          <option value="Network Architecture II">Network Architecture II</option>
+          <option value="Design and Analysis of Algorithms">Design and Analysis of Algorithms</option>
+          <option value="Formal Software Specification">Formal Software Specification</option>
+          <option value="Parallel ALgorithms">Parallel ALgorithms</option>
+          <option value="Knowledge Discovery and Management">Knowledge Discovery and Management</option>
+          <option value="Software Tools and Programming Environments">Software Tools and Programming Environments</option>
+          <option value="Software Methods and Tools">Software Methods and Tools</option>
+          <option value="Advanced Operating Systems">Advanced Operating Systems</option>
+          <option value="Wireless Communications">Wireless Communications</option>
+          <option value="Principles of Digital Communication Systems">Principles of Digital Communication Systems</option>
+          <option value="Capacity Planning for Service-Oriented Architectures">Capacity Planning for Service-Oriented Architectures</option>
+          <option value="Network Routing">Network Routing</option>
+          <option value="Queuing Theory and Applications">Queuing Theory and Applications</option>
+          <option value="Machine Learning for Data Scientists">Machine Learning for Data Scientists</option>
+          <option value="Artificial, Neural and Adaptive Systems">Artificial, Neural and Adaptive Systems</option>
+          <option value="Special Topics in Electrical and Computer Engineering">Special Topics in Electrical and Computer Engineering</option>
+        </select>
+        </label>
+        </ion-list>
+  <h1>Selected Courses:</h1>
+      <ion-list>
+        <ion-item ng-repeat=" tttt in listOfSelectedCourses">
+          {{tttt}}
+
+        </ion-item>
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <button class="button button-stable button-block  button-full" ng-click="createMajor(majors)">Create Major
+>>>>>>> origin/master
       </button>
 
     </form>

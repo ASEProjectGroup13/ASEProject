@@ -11,6 +11,36 @@
         <input type="text" placeholder="Enter username" ng-model="majordata.majorname" name="majorname">
       </label>
 
+<<<<<<< HEAD
+=======
+      <ion-list>
+
+        <label class="item item-select" name="department">
+          <span class="input-label">Department</span>
+          <select name = "department" ng-model = "coursedata.department" name = "department">
+            <option value="">- Select -</option>
+            <option value="CS">Computer Science</option>
+            <option value="EE">Electrical Engineering</option>
+            <option value="MEC">Mechanical Engineering</option>
+            <option value="CIV">Civil Engineering</option>
+
+          </select>
+        </label>
+
+        <label class="item item-select" name="difficultylevel">
+          <span class="input-label">DifficultyLevel</span>
+          <select name = "difficultylevel" ng-model = "courses.difficultylevel">
+            <option value="">- Select -</option>
+            <option value="1">beginners</option>
+            <option value="2">intermediate</option>
+            <option value="3">advanced</option>
+
+
+          </select>
+        </label>
+
+
+>>>>>>> origin/master
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
       <button class="button button-stable button-block  button-full" ng-click="updateMajor(majordata)">Edit Major
