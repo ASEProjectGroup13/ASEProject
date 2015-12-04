@@ -14,7 +14,7 @@ var URLRetriever = (function(){
       console.log("Currently in private method");
     };
 
-    var urlTesting = "http://mongorestserviceapitest.mybluemix.net";
+    var urlTesting = "http://mongorestase.mybluemix.net/";
 
     return {
       urlString:function(){

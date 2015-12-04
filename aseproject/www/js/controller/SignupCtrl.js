@@ -5,13 +5,15 @@
 myapp.controller('SignupCtrl', function ($scope, $http, $state) {
 
   $scope.register = function (data) {
-    //var url = "http://192.168.0.15:8080/com.umkc.rest/api/mongo/register"
+
+    var baseURL = URLRetriever.getInstance().urlString();
+
 
     console.log(data);
 
     var req = {
       method: 'POST',
-      url: 'http://mongorestserviceapi.mybluemix.net/api/mongo/create',
+      url: baseURL+'/mongo/create',
       headers: {
         'Access-Control-Allow-Headers':'*'
       },

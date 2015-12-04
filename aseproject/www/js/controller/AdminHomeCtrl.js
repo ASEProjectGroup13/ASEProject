@@ -17,7 +17,7 @@ myapp.controller('AdminHomeCtrl', function($scope, $http, $state, $rootScope){
 
     var req = {
       method: 'GET',
-      url: 'http://mongorestserviceapi.mybluemix.net/api/courseinfo/courses'
+      url: 'http://mongorestase.mybluemix.net/api/courseinfo/courses'
 
     };
 
@@ -49,7 +49,7 @@ myapp.controller('AdminHomeCtrl', function($scope, $http, $state, $rootScope){
 
     var req = {
       method:'POST',
-      url:'http://mongorestserviceapitest.mybluemix.net/api/courseinfo/deletecourse',
+      url:'http://mongorestase.mybluemix.net/api/courseinfo/deletecourse',
       data:item
     }
 
@@ -80,5 +80,11 @@ myapp.controller('AdminHomeCtrl', function($scope, $http, $state, $rootScope){
     console.log($rootScope.items)
     $state.go('adminedit');
 
+  }
+
+
+  $scope.navigateMajors = function(){
+    console.log('navigating to another page');
+    $state.go('majorhome');
   }
 })

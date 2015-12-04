@@ -25,7 +25,7 @@ myapp.controller('LoginCtrl',function($scope ,$http, $state,$cordovaNetwork,$roo
    // alert(isOnline)
     var req = {
       method: 'POST',
-      url: 'http://mongorestserviceapi.mybluemix.net/api/mongo/login',
+      url: urlTestString.urlString()+'/mongo/login',
       data: data
       //contentType: "application/json; charset=utf-8"
     };

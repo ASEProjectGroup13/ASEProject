@@ -149,12 +149,38 @@ var myapp = angular.module('aseproject', ['ionic','ngCordova'])
         url: "/profileAcademicDetails",
         views: {
           'appContent' :{
-            templateUrl: "templates/PreviousAcademicDetailsPage.html",
+            templateUrl: "templates/RecommendedCourses.html",
             controller : "ProfileHomeController"
           }
         }
       })
 
+
+    /*
+
+    Major related controllers
+     */
+
+      .state('majorhome', {
+        url: '/majorhome',
+        templateUrl: 'templates/majorHome.html',
+        controller: "MajorHomeCtrl"
+
+      })
+
+      .state('majoredit', {
+        url: '/majoredit',
+        templateUrl: 'templates/majorEdit.html',
+        controller: "MajorEditCtrl"
+
+      })
+
+      .state('majorcreate', {
+        url: '/majorcreate',
+        templateUrl: 'templates/majorCreate.html',
+        controller: "MajorCreateCtrl"
+
+      })
 
     // if none of the above states are matched, use this as the fallback
 

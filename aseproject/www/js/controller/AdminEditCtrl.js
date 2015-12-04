@@ -32,7 +32,7 @@ myapp.controller('AdminEditCtrl', function($scope, $http, $state,$rootScope){
 
     var req = {
       method: 'POST',
-      url: 'http://localhost:8080/com.umkc.rest/api/courseinfo/updatecourse',
+      url: 'http://mongorestase.mybluemix.net/api/courseinfo/updatecourse',
       data: data
     };
 

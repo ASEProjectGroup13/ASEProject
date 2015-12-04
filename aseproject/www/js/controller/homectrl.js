@@ -11,7 +11,7 @@ myapp.controller('homectrl', function ($scope, $http, $state ) {
     var req = {
 
       method: 'GET',
-      url: 'http://mongorestserviceapi.mybluemix.net/api/professors/retrieve'
+      url: 'http://mongorestase.mybluemix.net/api/professors/retrieve'
     };
 
     $scope.professorsResponseData = [];

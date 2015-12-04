@@ -1,0 +1,50 @@
+<ion-view title="Available Majors">
+
+  <ion-content padding="true" scroll="true" class="has-header has-footer">
+    <ion-header-bar class="bar-positive">
+
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+                ng-click="data.showDelete = !data.showDelete; data.showReorder = false">Delete</button>
+      </div>
+
+
+      <div class="buttons">
+        <button class="button button-icon icon ion-android-add"
+                ng-click="createMajors()">Add</button>
+      </div>
+      <h1 class="title">List of Majors</h1>
+
+
+      <div class="buttons">
+        <button class="button button-icon icon ion-home" ng-click="navigatingToHome()">
+          Home
+        </button>
+        <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+          Reorder
+        </button>
+      </div>
+
+
+    </ion-header-bar>
+    <ion-list show-delete="data.showDelete"
+              show-reorder="data.showReorder"
+              can-swipe="listCanSwipe"
+      >
+      <ion-item ng-repeat="item in ttttt"
+                class="item-thumbnail-left" ng-click="viewMajorDetails(item)">
+
+        <h2>{{item.majorname}}</h2>
+        <p>{{item.majorid}}</p>
+
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="onItemMajorDelete(item,$index, itemsMajor)">
+        </ion-delete-button>
+        <ion-reorder-button class="ion-navicon"
+                            on-reorder="moveItemMajor(item, $fromIndex, $toIndex)">
+        </ion-reorder-button>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -12,7 +12,14 @@
                 ng-click="createCourses()">Add</button>
       </div>
       <h1 class="title">Courses List</h1>
+
+      <!--<div class="buttons">-->
+        <!--<button class="button button-icon icon ion-bookmark"-->
+                <!--ng-click="">Majors</button>-->
+      <!--</div>-->
       <div class="buttons">
+        <button class="button button-icon icon ion-bookmark"
+                ng-click="navigateMajors()">Majors</button>
         <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
           Reorder
         </button>

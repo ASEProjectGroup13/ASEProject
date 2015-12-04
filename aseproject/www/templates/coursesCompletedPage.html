@@ -1,4 +1,4 @@
-<ion-view style="" title="Courses Enrolled">
+<ion-view style="" title="Courses Completed">
   <ion-content class="has-header" padding="true">
     <form>
       <ion-list>
@@ -15,15 +15,15 @@
           </select>
           </label>
 
-        <h1>Course Enrolled List:</h1>
+        <h1>Course Completed List:</h1>
         <ion-list id="compltedID">
           <ion-item ng-repeat="lll in coursesCompltedList" >
-            {{lll}}
+            {{lll.coursename}}
           </ion-item>
         </ion-list>
         <button class="button button-stable button-block  button-full" ng-click="updateSettings()" id="updateButton">Update
         </button>
-        <button class="button button-stable button-block  button-full" ng-click="saveSettings(completedcourses)" id="saveButton">Save
+        <button class="button button-stable button-block  button-full" ng-click="saveSettings()" id="saveButton">Save
         </button>
     </form>
   </ion-content>

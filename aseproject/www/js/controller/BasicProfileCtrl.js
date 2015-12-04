@@ -30,7 +30,7 @@ myapp.controller('BasicProfileCtrl', function($state,$scope,$http, $rootScope){
 
     var request = {
       method: 'POST',
-      url: 'http://mongorestserviceapi.mybluemix.net/api/profile/retrieveProfile',
+      url: 'http://mongorestase.mybluemix.net/api/profile/retrieveProfile',
       data: dataString
     }
 
@@ -58,7 +58,7 @@ myapp.controller('BasicProfileCtrl', function($state,$scope,$http, $rootScope){
     //
     var request = {
       method:'POST',
-      url: 'http://mongorestserviceapi.mybluemix.net/api/profile/updateProfile',
+      url: 'http://mongorestase.mybluemix.net/api/profile/updateProfile',
       data : data
     }
 
