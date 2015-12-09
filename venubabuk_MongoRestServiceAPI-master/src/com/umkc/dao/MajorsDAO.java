@@ -30,12 +30,8 @@ public class MajorsDAO {
 			
 			MongoClientURI mongoClientUri = new MongoClientURI("mongodb://root:admin@ds045714.mongolab.com:45714/group13");
 			
-			
-			
 			if(mongoClient == null){
 				mongoClient = new MongoClient(mongoClientUri);
-				
-				
 			}
 			
 			DB db = mongoClient.getDB(mongoClientUri.getDatabase());
@@ -45,7 +41,7 @@ public class MajorsDAO {
 			return dbcollection;
 		}
 		
-		public boolean insertCourseInfo(BasicDBObject basicdbobject) {
+		public boolean insertMajorInfo(BasicDBObject basicdbobject) {
 
 			dbcollection= createMajorDBCollection();
 
@@ -59,6 +55,24 @@ public class MajorsDAO {
 
 				return true;
 			}
+		}
+		
+		public String updateMajorInformation(BasicDBObject basicdbObject){
+			
+			
+			dbcollection = createMajorDBCollection();
+			
+			dbcollection.update(new BasicDBObject("majorid",basicdbObject.getString("majorid")), basicdbObject);
+			
+			BasicDBObject basicdbobject = null;
+			
+			DBCursor dbcursor = dbcollection.find(basicdbObject);
+			
+			if(dbcursor.hasNext()){
+				basicdbobject = (BasicDBObject) dbcursor.next();
+			}
+			
+			return basicdbObject.toString();
 		}
 		
 		public DBCursor retrieveAllMajors() {
@@ -86,6 +100,22 @@ public class MajorsDAO {
 			else{
 				mongoClient.close();
 			}
+		}
+
+		
+		public boolean deleteMajorInformation(BasicDBObject basicdbobject) {
+			
+			dbcollection = createMajorDBCollection();
+			
+			dbcollection.remove(basicdbobject);
+			
+			boolean status;
+			if(doesMajorRecordExits(basicdbobject)){
+				status = false;
+			}else{
+				status = true;
+			}
+			return status;
 		}
 
 

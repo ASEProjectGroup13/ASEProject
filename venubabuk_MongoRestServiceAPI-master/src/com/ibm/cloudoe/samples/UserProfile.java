@@ -1,8 +1,13 @@
-																														package com.ibm.cloudoe.samples;import javax.ws.rs.GET;
+package com.ibm.cloudoe.samples;import java.util.ArrayList;
+
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.omg.CORBA.UShortSeqHolder;
 
 import com.mongodb.BasicDBObject;
@@ -57,23 +62,38 @@ public class UserProfile {
 	
 	@POST
 	@Path("completedcourses")
-	public String updateCompletedCourses(String jsonData){
+	public String updateCompletedCourses(String jsonData) throws JSONException{
 		
 		System.out.println("data received from front end" + jsonData);
 
-		Object jsonObject = JSON.parse(jsonData);
-
-		BasicDBObject basicdbobject = (BasicDBObject) jsonObject;
+		String courseArray[] = jsonData.split(",");
+		
+		String username = courseArray[0];
+		
+		ArrayList<BasicDBObject> arrayList = new ArrayList<>();
+		
+		int i=1;
+		while(i <courseArray.length){
+			arrayList.add(new BasicDBObject("coursename",courseArray[i]));
+			i++;
+		}
+		
+		System.out.println(arrayList+"printing json courses");
 		
 		UserProfileDAO userprofileDAO = new UserProfileDAO();
 		
-		String input = userprofileDAO.retrieveBasicProfile(basicdbobject);
+		String input = userprofileDAO.retrieveBasicProfile(new BasicDBObject("username",username));
 		
 		Object profileObject = JSON.parse(input);
 		
+		System.out.println("output receied from database"+input);
+		
 		BasicDBObject basicprofie = (BasicDBObject) profileObject;
 		
-		basicprofie.put("completedcourses", basicdbobject);
+		System.out.println("string"+arrayList);
+		
+		
+		basicprofie.put("completedcourses", arrayList);
 		
 		boolean status = userprofileDAO.updateBasicProfile(basicprofie);
 		
@@ -87,16 +107,79 @@ public class UserProfile {
 	@Path("retrievecompletedcourses")
 	public String retrieveCompletedCourses(BasicDBObject basicDBObject){
 		
+		System.out.println("username received from front end"+ basicDBObject.getString("username"));
 		UserProfileDAO userprofileDAO = new UserProfileDAO();
 		
 		String output = userprofileDAO.retrieveBasicProfile(basicDBObject);
 		
-		Object profileObject = JSON.parse(output);
+		System.out.println("output received from database is :"+output);
+
+		return output;
+		
+	}
+	
+	@POST
+	@Path("enrolledcourses")
+	public String updateEnrolledCourses(String jsonData) throws JSONException{
+		
+		System.out.println("data received from front end" + jsonData);
+		
+		System.out.println("Inside enrolled courses");
+
+		String courseArray[] = jsonData.split(",");
+		
+		String username = courseArray[0];
+		
+		ArrayList<BasicDBObject> arrayList = new ArrayList<>();
+		
+		int i=1;
+		while(i <courseArray.length){
+			arrayList.add(new BasicDBObject("coursename",courseArray[i]));
+			i++;
+		}
+		
+		System.out.println(arrayList+"printing json courses");
+		
+		UserProfileDAO userprofileDAO = new UserProfileDAO();
+		
+		String input = userprofileDAO.retrieveBasicProfile(new BasicDBObject("username",username));
+		
+		Object profileObject = JSON.parse(input);
+		
+		System.out.println("output receied from database"+input);
 		
 		BasicDBObject basicprofie = (BasicDBObject) profileObject;
 		
-		BasicDBObject completedCourseObject = (BasicDBObject) basicprofie.get("completedcourses");
-		return completedCourseObject.toString();
+		System.out.println("string"+arrayList);
 		
+		
+		basicprofie.put("enrolledcourses", arrayList);
+		
+		boolean status = userprofileDAO.updateBasicProfile(basicprofie);
+		
+		BasicDBObject outputDBObject = new BasicDBObject();
+		
+		return userprofileDAO.retrieveBasicProfile(basicprofie);
+		
+	}
+	
+	@POST
+	@Path("retrieveenrolledcourses")
+	public String retrieveEnrolledCourses(BasicDBObject basicDBObject){
+		
+		System.out.println("username received from front end"+ basicDBObject.getString("username"));
+		UserProfileDAO userprofileDAO = new UserProfileDAO();
+		
+		String output = userprofileDAO.retrieveBasicProfile(basicDBObject);
+		
+		System.out.println("output received from database is :"+output);
+
+		return output;
+		
+	}
+	
+	public static void main(String[] args) throws JSONException {
+		UserProfile userProfile = new UserProfile();		
+		userProfile.updateCompletedCourses("manideep,ASE,Advanced Software Engineering");
 	}
 }

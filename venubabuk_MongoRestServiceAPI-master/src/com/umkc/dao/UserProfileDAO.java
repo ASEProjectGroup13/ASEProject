@@ -1,5 +1,7 @@
 package com.umkc.dao;
 
+import javax.sound.midi.Synthesizer;
+
 import org.json.JSONObject;
 
 import com.mongodb.BasicDBObject;
@@ -34,6 +36,9 @@ public class UserProfileDAO {
 		
 		BasicDBObject original = new BasicDBObject("username", username);
 		
+		System.out.println("original database object before insert"+original);
+		System.out.println("updated database object before insert"+basicdbobject.toString());
+		
 		dbcollection =createASEDBCollection();
 		
 		dbcollection.update(original, basicdbobject);
@@ -49,13 +54,29 @@ public class UserProfileDAO {
 		
 		BasicDBObject basicdbobject1= null;
 		
-		while(dbcursor.hasNext()){
+		if(dbcursor.hasNext()){
 			 basicdbobject1 = (BasicDBObject) dbcursor.next();
-			break;
+			
 		}
 		
 		System.out.println("JSON Object from output"+basicdbobject1.toString());
 		return basicdbobject1.toString();
+	}
+	
+	public BasicDBObject retrieveBasicInformation(BasicDBObject basicDBObject){
+		
+		dbcollection  = createASEDBCollection();
+		
+		DBCursor dbcursor = dbcollection.find(basicDBObject);
+		
+		BasicDBObject basicdbobject1= null;
+		
+		if(dbcursor.hasNext()){
+			 basicdbobject1 = (BasicDBObject) dbcursor.next();
+			
+		}
+		
+		return basicdbobject1;
 	}
 
 }

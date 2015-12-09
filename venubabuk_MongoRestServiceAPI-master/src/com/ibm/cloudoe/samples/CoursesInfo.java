@@ -26,7 +26,7 @@ public class CoursesInfo {
 	}
 
 	@Path("deletecourse")
-	@DELETE
+	@POST
 	public String deleteCourse(String jsondata) {
 		System.out.println("data received from front end" + jsondata);
 
@@ -122,33 +122,7 @@ public class CoursesInfo {
 		
 	}
 	
-	@Path("deletecourses")
-	@DELETE
-	public String deleteCourses(String jsondata) {
-		System.out.println("data received from front end" + jsondata);
-
-		Object jsonObject = JSON.parse(jsondata);
-
-		BasicDBObject basicdbobject = (BasicDBObject) jsonObject;
-		CoursesDAO coursesdao = new CoursesDAO();
-
-		boolean status = coursesdao.deleteCourseFromDatabase(basicdbobject);
-
-		JSONObject statusObject = new JSONObject();
-		try {
-		if(status){
-			statusObject.put("status", "success");
-		}
-		else{
-			
-				statusObject.put("status", "fail");
-			} 
-		}catch (JSONException e) {
-			System.out.println("exception in message"+e.getMessage());
-		}
-		return statusObject.toString();
-
-	}
+	
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

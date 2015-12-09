@@ -31,23 +31,41 @@ public class MongoDatabaseClient {
 		
 		DBCollection dbcollection = createASEDBCollection();
 		
-		DBCursor dbcursor = dbcollection.find(basicdbobject);
+		String username = basicdbobject.getString("username");
+		
+		System.out.println("username received from front end"+ username);
+		
+		DBCursor dbcursor = dbcollection.find(new BasicDBObject("username", username));
 		
 		System.out.println("Hiii");
 		
-		BasicDBObject basicsDBObject;
+		BasicDBObject basicsDBObject = null;
 		
-		while(dbcursor.hasNext()){
+		
+		
+		
+		
+		//System.out.println(dbcursor.toArray().toString());
+		
+		if(dbcursor.hasNext()){
 			
 			BasicDBObject basiDBObject = (BasicDBObject) dbcursor.next();
 			
 			System.out.println("Inside hello how are you");
 			
+			String usernameFt = basicdbobject.getString("username");
+			String passwordFt = basicdbobject.getString("password");
+			String usertypeFt = basicdbobject.getString("usertype");
+			
+			
+			
 			//return basiDBObject.toString();
 			
-			String pwd = basiDBObject.getString("Password");
-			String userType = basiDBObject.getString("usertype");
+		if(basicdbobject.getString("username").equals(basiDBObject.getString("username")) && basicdbobject.getString("password").equals(basiDBObject.getString("password")) && basicdbobject.getString("usertype").equals(basiDBObject.getString("usertype")));
 			
+		
+		System.out.println(basicdbobject.getString("username"));
+		
 			return true;
 		}
 		
