@@ -1,0 +1,62 @@
+<ion-view title="Admin Edit Course" class="loginpanel">
+  <ion-content padding="true" scroll="false" class="has-header has-footer">
+    <form>
+
+      <label class="item item-input">
+        <span class="input-label">Cousre Id</span>
+        <input type="text" ng-model="coursedata.courseid" name="courseid">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Course Name</span>
+        <input type="text" placeholder="Enter username" ng-model="coursedata.coursename" name="coursename">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Course Description</span>
+        <input type="text" placeholder="Course Description" ng-model="coursedata.cdescription" name = "coursedescription">
+      </label>
+      <ion-list>
+
+        <label class="item item-select" name="department">
+          <span class="input-label">Department</span>
+          <select name = "department" ng-model = "coursedata.department" name = "department">
+            <option value="">- Select -</option>
+            <option value="CS">Computer Science</option>
+            <option value="EE">Electrical Engineering</option>
+            <option value="MEC">Mechanical Engineering</option>
+            <option value="CIV">Civil Engineering</option>
+
+          </select>
+        </label>
+        <label class="item item-select" name="specialization">
+          <span class="input-label">Specialization</span>
+          <select name = "specialization" ng-model = "coursedata.specialization" name = "specialization">
+            <option value="">- Select -</option>
+            <option value="DS">Data Science</option>
+            <option value="SE">Software Engineering</option>
+            <option value="BIO">Bio-Informatics</option>
+
+          </select>
+        </label>
+        <label class="item item-select" name="professor">
+          <span class="input-label">Professors</span>
+          <select name = "professor" ng-model = "coursedata.professor" name = "professor">
+
+            <option value="">- Select -</option>
+            <option value="{{prof.name}}" ng-repeat="prof in professData">{{prof.name}}</option>
+            <!--<option value="DS">Data Science</option>-->
+            <!--<option value="SE">Software Engineering</option>-->
+            <!--<option value="BIO">Bio-Informatics</option>-->
+
+          </select>
+        </label>
+
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <button class="button button-stable button-block  button-full" ng-click="updateCourse(coursedata)">Edit Course
+      </button>
+      <!--<button class="button button-stable button-block  button-full" ng-click="register(usertype,name,username, password, email,phonenumber)">Create an account-->
+      <!--</button>-->
+
+    </form>
+  </ion-content>
+</ion-view>

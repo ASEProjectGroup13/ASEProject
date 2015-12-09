@@ -1,0 +1,17 @@
+<ion-view style="" title="homepage" ng-controller="homectrl">
+  <ion-tabs style="" class="tabs-stable tabs-icon-top">
+    <ion-tab style="" title="Professors" icon="ion-ios-people" href="#/home/professor">
+      <ion-nav-view name="professor"></ion-nav-view>
+    </ion-tab>
+    <ion-tab style="" title="Courses" icon="ion-xbox" href="#/home/coursespage">
+      <ion-nav-view name="courses"></ion-nav-view>
+    </ion-tab>
+    <ion-tab style="" title="Profile" icon="ion-man" ng-click="navigatePage()">
+      <ion-nav-view name=" profile"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+
+  <ion-content padding="true" class="has-header" ng-controller="homectrl as home">
+
+  </ion-content>
+</ion-view>
