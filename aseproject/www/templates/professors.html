@@ -1,0 +1,15 @@
+<ion-view style="" title="Professor">
+  <ion-content class="has-header" padding="true">
+    <div class="list">
+      <a class="item item-avatar" href="#" ng-repeat="its in professors">
+        <h2 align="center">{{its.username}}</h2>
+        <p align="center">{{its.name}}</p>
+        <!-- <img src="img/Dr.praveenrao.jpg" width="60" height="auto" style="width: 60px; height: auto;">-->
+        <img ng-src="{{its.imageurl}}" width="80" height="auto" style="width: 60px; height: auto;">
+
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>

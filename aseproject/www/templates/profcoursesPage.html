@@ -1,0 +1,14 @@
+<ion-view style="" title="Courses">
+  <ion-content class="has-header" padding="true">
+    <div class="list">
+
+      <ion-item ng-repeat="item in profcourses">
+        <h2>{{item.coursename}}
+          {{item.professorname}}</h2>
+
+        <h3 align="right">Ratings {{item.ratings}}</h3>
+
+      </ion-item>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view title="Admin Add Major">
+  <ion-content padding="true" scroll="true" class="has-header has-footer" ng-controller="RecommendCoursesPageCtrl">
+
+
+      <h1>Recomended Major:</h1>
+      {{majorRecommended}}
+    <!--{{majorsname}}-->
+
+     <h2>Recommended Courses</h2>
+    <!--<a class="item item-avatar" href="#" ng-repeat="itemMajor in recommendedCourses">-->
+      <!--<h2>{{itemMajor.coursename}}</h2>-->
+
+    <ion-items>
+
+      <ion-item ng-repeat=" temmps in coursesRecommended">
+        {{temmps.coursename}}
+      </ion-item>
+
+
+    </ion-items>
+
+    <button class="button button-stable button-block  button-full" ng-click="naigateToRecommendations()">Recommendations Page
+    </button>
+
+  </ion-content>
+</ion-view>

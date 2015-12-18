@@ -1,0 +1,17 @@
+<ion-view style="" title="Courses">
+  <ion-content class="has-header" padding="true">
+    <div class="list">
+
+      <ion-item ng-repeat="item in courses" ng-click="displayDeatils(item)">
+        <h2>{{item.coursename}}
+          {{item.professorname}}</h2>
+        <h3 align="right">Ratings: {{item.ratings}}</h3>
+
+      </ion-item>
+    </div>
+      <!--<a class="item item-avatar" href="#" ng-repeat="item in courses">-->
+        <!--<h2>{{item.coursename}}</h2>-->
+        <!--<p>{{item.professorname}}</p>-->
+      <!--</a>-->
+  </ion-content>
+</ion-view>

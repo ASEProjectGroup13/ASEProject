@@ -1,0 +1,38 @@
+<ion-view title="Course Details" class="loginpanel">
+  <ion-content padding="true" scroll="false" class="has-header has-footer">
+    <form>
+
+      <label class="item item-input">
+        <span class="input-label">Cousre Id</span>
+        <input type="text" ng-model="coursesdetails.courseid">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Course Name</span>
+        <input type="text" placeholder="Enter username" ng-model="coursesdetails.coursename">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Course Description</span>
+        <input type="text" placeholder="Course Description" ng-model="coursesdetails.description">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Course Completion Status</span>
+        <input type="text" placeholder="Course Description" ng-model="coursesdetails.statusCompletion">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Specialization</span>
+        <input type="text" placeholder="Specialization" ng-model="coursesdetails.specialization">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Professor Name</span>
+        <input type="text" placeholder="Professor Name" ng-model="coursesdetails.professor">
+      </label>
+
+      <div class="spacer" style="height: 40px;"></div>
+      <button class="button button-stable button-block  button-full" id="feedback" ng-click="navigateToFeedback()">Provide Feedback
+      </button>
+    </form>
+  </ion-content>
+</ion-view>

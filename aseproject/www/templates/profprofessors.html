@@ -1,0 +1,16 @@
+<ion-view title="Profie Page" class="loginpanel">
+  <ion-content padding="true" scroll="true" class="has-header has-footer">
+  <h1 align="center"> Welcome {{professorsDetails.name}}</h1>
+    <img align="center" ng-src="{{professorsDetails.imageurl}}" width="80" height="auto" style="width: 200px; height: 350px; alignment: center">
+    <h3 align="center">e-Mail: {{professorsDetails.email}}</h3>
+    <h3 align="center">Phone Number: {{professorsDetails.phonenumber}}</h3>
+<ion-list>
+
+  <ion-item ng-repeat="teaches in profcoursesteach">
+
+    {{teaches}}
+  </ion-item>
+
+</ion-list>
+  </ion-content>
+</ion-view>

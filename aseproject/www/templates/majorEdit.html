@@ -1,0 +1,22 @@
+<ion-view title="Admin Edit Major" class="loginpanel">
+  <ion-content padding="true" scroll="false" class="has-header has-footer">
+    <form>
+
+      <label class="item item-input">
+        <span class="input-label">Major Id</span>
+        <input type="text" ng-model="majordata.majorid" name="majorid">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Major Name</span>
+        <input type="text" placeholder="Enter username" ng-model="majordata.majorname" name="majorname">
+      </label>
+
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <button class="button button-stable button-block  button-full" ng-click="updateMajor(majordata)">Edit Major
+      </button>
+
+
+    </form>
+  </ion-content>
+</ion-view>

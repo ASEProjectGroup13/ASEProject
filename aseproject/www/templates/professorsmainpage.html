@@ -1,0 +1,22 @@
+
+<ion-view style="" title="Professor Home Page" ng-controller="ProfHomeCtrl">
+  <ion-tabs style="" class="tabs-stable tabs-icon-top">
+    <ion-tab style="" title="Profile" icon="ion-man" href="#/profhome/profprofile">
+      <ion-nav-view name="profprofessor"></ion-nav-view>
+    </ion-tab>
+    <ion-tab style="" title="Courses" icon="ion-xbox" href="#/profhome/profcoursespage">
+      <ion-nav-view name="profcourses"></ion-nav-view>
+    </ion-tab>
+    <ion-tab style="" title="Update Profile" icon="ion-man" href="#/profhome/profprofileupdate">
+      <ion-nav-view name="profupdate"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab style="" title="Signout" icon="ion-man" href="#/login">
+      <ion-nav-view name=" Sign-out"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+
+  <ion-content padding="true" class="has-header" ng-controller="ProfHomeCtrl as home">
+
+  </ion-content>
+</ion-view>

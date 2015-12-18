@@ -1,0 +1,46 @@
+<ion-view title="Basic Profile" class="loginpanel">
+  <!--<ion-header-bar>-->
+    <!--<div class="buttons">-->
+      <!--<button class="button button-icon icon ion-ios-minus-outline"-->
+              <!--ng-click="">Delete</button>-->
+    <!--</div>-->
+  <!--</ion-header-bar>-->
+  <ion-content padding="true" scroll="true" class="has-header has-footer">
+    <form>
+      <ion-list>
+
+        <label class="item item-input">
+          <span class="input-label">User Name</span>
+          <input type="text" placeholder="Enter username" ng-model="basicprofuserprofile.username" ng-readonly="true">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Name</span>
+          <input type="text" placeholder="Enter Name" ng-model="basicprofuserprofile.name" ng-readonly="basicprofuserprofile.statuses">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">e-Mail</span>
+          <input type="email" placeholder="Enter Password" ng-model="basicprofuserprofile.email" ng-readonly="basicprofuserprofile.statuses">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Phone Number</span>
+          <input type="tel" placeholder="Enter Phone Number" ng-model="basicprofuserprofile.phonenumber" ng-readonly="basicprofuserprofile.statuses">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">New Password</span>
+          <input type="password" placeholder="Enter Phone Number" ng-model="basicprofuserprofile.password" ng-readonly="basicprofuserprofile.statuses">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Confirm Password</span>
+          <input type="password" placeholder="Enter Confirm Password" ng-model="basicprofuserprofile.cnfpssword" ng-readonly="basicprofuserprofile.statuses">
+        </label>
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <button class="button button-stable button-block  button-full" ng-click="updateProfLoadData()">Update</button>
+
+      <button class="button button-stable button-block  button-full" id="saveButton" ng-click="saveBasicProfInformation(basicprofuserprofile)">Save
+      </button>
+
+
+    </form>
+  </ion-content>
+</ion-view>

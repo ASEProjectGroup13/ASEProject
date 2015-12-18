@@ -1,0 +1,52 @@
+<ion-view title="Feedback" xmlns="http://www.w3.org/1999/html">
+  <ion-content padding="true" class="has-header">
+    <h3>Course Feedback form</h3>
+    <h5>fill out the form with honesty</h5>
+    <form class="list">
+      <label class="item item-input">
+        <span class="input-label">Course</span>
+        <input type="text" placeholder="course" ng-model="Feedback.coursename">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Instructor</span>
+        <input type="text" placeholder="instructor" ng-model="Feedback.professor">
+      </label>
+    </form>
+    <div class ="list">
+      <div class="item item-divider">
+        <p><h3>Receive syllabus &amp; instructions at first</h3></p>
+      </div>
+      <ion-radio name="radio1" id="radio1" ng-repeat="item in rate1" ng-value="item.value" ng-model="Feedback.rate1" ng-change="rating1(item)">{{item.text}}</ion-radio>
+
+      <div class="item item-divider">
+        <p><h3>Course objectives stated clearly</h3></p>
+      </div>
+      <ion-radio name="radio2" id="radio2" ng-repeat="item in rate2" ng-value="item.value" ng-model="Feedback.rate2" ng-change="rating2(item)">{{item.text}}</ion-radio>
+
+      <div class="item item-divider">
+        <p><h3>Materials presented in class matches syllabus</h3></p>
+      </div>
+      <ion-radio name="radio3" id="radio3" ng-repeat="item in rate3" ng-value="item.value" ng-model="Feedback.rate3" ng-change="rating3(item)">{{item.text}}</ion-radio>
+      <div class="item item-divider">
+        <p><h3>Materials presented helped in completing your project</h3></p>
+      </div>
+      <ion-radio name="radio4" id="radio4" ng-repeat="item in rate4" ng-value="item.value" ng-model="Feedback.rate4" ng-change="rating4(item)">{{item.text}}</ion-radio>
+      <div class="item item-divider">
+        <p><h3>Instructor demonstrates adequate knowledge of course</h3></p>
+      </div>
+      <ion-radio name="radio5" id="radio5" ng-repeat="item in rate5" ng-value="item.value" ng-model="Feedback.rate5" ng-change="rating5(item)">{{item.text}}</ion-radio>
+      <div class="item item-divider">
+        <p><h3>Instructor uses appropriate teaching methods</h3></p>
+      </div>
+      <ion-radio name="radio6" id="radio6" ng-repeat="item in rate6" ng-value="item.value" ng-model="Feedback.rate6" ng-change="rating6(item)">{{item.text}}</ion-radio><div class="item item-divider">
+      <p><h3>Instructor's teching is very effective and helpful</h3></p>
+    </div>
+      <ion-radio name="radio7" id="radio7" ng-repeat="item in rate7" ng-value="item.value" ng-model="Feedback.rate7" ng-change="rating7(item)">{{item.text}}</ion-radio>
+      <div class="item item-divider">
+        <p><h3>Class time is used sufficiently</h3></p>
+      </div>
+      <ion-radio name="radio8" id="radio8" ng-repeat="item in rate8" ng-value="item.value" ng-model="Feedback.rate8" ng-change="rating8(item)">{{item.text}}</ion-radio>
+    </div>
+    <button class="button button-stable  " ng-click="receiveFeedback()">Submit</button>
+  </ion-content>
+</ion-view>
